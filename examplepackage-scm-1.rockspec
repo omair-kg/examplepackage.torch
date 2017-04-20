@@ -1,17 +1,17 @@
-package = "examplepackage"
+package = "tukeyLoss"
 version = "scm-1"
 
 source = {
-   url = "git://github.com/soumith/examplepackage.torch",
+   url = "https://github.com/omair-kg/examplepackage.torch",
    tag = "master"
 }
 
 description = {
-   summary = "A hello-world for torch packages",
+   summary = "Tukey Loss function for regression tasks",
    detailed = [[
-   	    A hello-world for torch packages
+   	    Based on the paper 'Robust Optimization for deep regression' by Belagiannis et al.
    ]],
-   homepage = "https://github.com/soumith/examplepackage.torch"
+   homepage = "https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwiVkviukbPTAhUFxRQKHURyDDMQFggxMAE&url=http%3A%2F%2Fwww.cv-foundation.org%2Fopenaccess%2Fcontent_iccv_2015%2Fpapers%2FBelagiannis_Robust_Optimization_for_ICCV_2015_paper.pdf&usg=AFQjCNFx1600kvb23M-Ahu-W4LS_01z7nw&sig2=2fg_71_aWkNnB4R0j8Mjww"
 }
 
 dependencies = {

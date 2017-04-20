@@ -1,6 +1,6 @@
 require 'torch'
-
-local examplepackage = {}
+require 'nn'
+local TukeyLoss = {}
 
 examplepackage.hellomodule = require 'examplepackage.hellomodule'
 
