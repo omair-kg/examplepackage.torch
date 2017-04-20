@@ -12,7 +12,6 @@ function TukeyLoss:__init(sizeAverage)
 end
 
 function TukeyLoss:updateOutput(input_,target_)
-  print(self.iter)
  res = updateRes(input_,target_,self.c,self.iter) 
 
 local res_temp = res:clone()
@@ -36,7 +35,6 @@ self.gradInput = temp_y
 return self.gradInput
 end
 function mad(x)
-  --median(abs(x-median(x))
   if x == nil then
     error('Input for MAD calculation is empty')
   end
@@ -46,8 +44,6 @@ function mad(x)
 y = y:repeatTensor(1,temp_size)
   output = torch.median(torch.abs(x:add(-y)))
   return output
-  --http://lua-users.org/wiki/SimpleStats
-  --https://groups.google.com/forum/#!topic/torch7/TliM2KO2ef0
 end
 function updateRes(input_,target_,c,iter)
   local input = input_:clone()
@@ -55,9 +51,9 @@ function updateRes(input_,target_,c,iter)
   local res = target-input
   local MAD = 1.4826 * mad(res:clone())
   local temp = 100*torch.sum(torch.abs(res:clone()):lt(c))
-  --local nonZero = torch.round(temp/torch.numel(res:clone())) --nonZero<70
+  local nonZero = torch.round(temp/torch.numel(res:clone()))
 
-  if iter<50 then
+  if nonZero<70 then
     MAD=MAD*7
   end
   
